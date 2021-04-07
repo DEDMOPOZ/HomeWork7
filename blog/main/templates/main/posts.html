@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ title }}</h1>
+    <div class="payload">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Post Title</th>
+                <th scope="col">Post Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for post in posts %}
+            <tr>
+                <th scope="row">{{ post.title }}</th>
+                <td>{{ post.description }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
